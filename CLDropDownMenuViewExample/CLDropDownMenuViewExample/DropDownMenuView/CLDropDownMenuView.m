@@ -310,8 +310,11 @@
         _tableView.layer.masksToBounds = YES;
         
 
-        [_tableView registerNib:[UINib nibWithNibName:@"CLDropDownMenuAllCell" bundle:nil] forCellReuseIdentifier:@"CLDropDownMenuAllCell"];
-        [_tableView registerNib:[UINib nibWithNibName:@"CLDropDownMenuOnlyTitleCell" bundle:nil] forCellReuseIdentifier:@"CLDropDownMenuOnlyTitleCell"];
+        NSBundle *CLDropDownMenuViewBundle = [NSBundle bundleForClass:[self class]];
+        [[CLDropDownMenuViewBundle loadNibNamed:@"CLDropDownMenuAllCell" owner:self options:nil] lastObject];
+        
+        [_tableView registerNib:[UINib nibWithNibName:@"CLDropDownMenuAllCell" bundle:CLDropDownMenuViewBundle] forCellReuseIdentifier:@"CLDropDownMenuAllCell"];
+        [_tableView registerNib:[UINib nibWithNibName:@"CLDropDownMenuOnlyTitleCell" bundle:CLDropDownMenuViewBundle] forCellReuseIdentifier:@"CLDropDownMenuOnlyTitleCell"];
         
         _tableView.translatesAutoresizingMaskIntoConstraints = NO;
     }
