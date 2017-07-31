@@ -59,7 +59,7 @@
         
         _menuConfig = [[CLDropDownMenuConfig alloc] init];
         _menuConfig.rightMarign = 10;
-        _menuConfig.dropDownType = CLDropDownTypeAll;
+        _menuConfig.dropDownType = CLDropDownTypeOnlyTitle;
         _menuConfig.viewWidth = 150;
         _menuConfig.itemHeight = 44;
         _menuConfig.limitMaxCount = 3;

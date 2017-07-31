@@ -14,9 +14,7 @@
 		48F94DF21F2B3B1C00585D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F94DF11F2B3B1C00585D3A /* Assets.xcassets */; };
 		48F94DF51F2B3B1C00585D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F94DF31F2B3B1C00585D3A /* LaunchScreen.storyboard */; };
 		48F94E281F2B3C0800585D3A /* CLDropDownMenuAllCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E191F2B3C0800585D3A /* CLDropDownMenuAllCell.m */; };
-		48F94E291F2B3C0800585D3A /* CLDropDownMenuAllCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F94E1A1F2B3C0800585D3A /* CLDropDownMenuAllCell.xib */; };
 		48F94E2A1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E1C1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.m */; };
-		48F94E2B1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48F94E1D1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.xib */; };
 		48F94E2C1F2B3C0800585D3A /* CLDropDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E1F1F2B3C0800585D3A /* CLDropDownMenuView.m */; };
 		48F94E2D1F2B3C0800585D3A /* CLDropDownMenuConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E221F2B3C0800585D3A /* CLDropDownMenuConfig.m */; };
 		48F94E2E1F2B3C0800585D3A /* CLDropDownMenuInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E251F2B3C0800585D3A /* CLDropDownMenuInfo.m */; };
@@ -37,10 +35,8 @@
 		48F94DF61F2B3B1C00585D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48F94E181F2B3C0800585D3A /* CLDropDownMenuAllCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuAllCell.h; sourceTree = "<group>"; };
 		48F94E191F2B3C0800585D3A /* CLDropDownMenuAllCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuAllCell.m; sourceTree = "<group>"; };
-		48F94E1A1F2B3C0800585D3A /* CLDropDownMenuAllCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLDropDownMenuAllCell.xib; sourceTree = "<group>"; };
 		48F94E1B1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuOnlyTitleCell.h; sourceTree = "<group>"; };
 		48F94E1C1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuOnlyTitleCell.m; sourceTree = "<group>"; };
-		48F94E1D1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLDropDownMenuOnlyTitleCell.xib; sourceTree = "<group>"; };
 		48F94E1E1F2B3C0800585D3A /* CLDropDownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuView.h; sourceTree = "<group>"; };
 		48F94E1F1F2B3C0800585D3A /* CLDropDownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuView.m; sourceTree = "<group>"; };
 		48F94E211F2B3C0800585D3A /* CLDropDownMenuConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuConfig.h; sourceTree = "<group>"; };
@@ -123,10 +119,8 @@
 			children = (
 				48F94E181F2B3C0800585D3A /* CLDropDownMenuAllCell.h */,
 				48F94E191F2B3C0800585D3A /* CLDropDownMenuAllCell.m */,
-				48F94E1A1F2B3C0800585D3A /* CLDropDownMenuAllCell.xib */,
 				48F94E1B1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.h */,
 				48F94E1C1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.m */,
-				48F94E1D1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -204,12 +198,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				48F94E2F1F2B3C0800585D3A /* DropDownMenuView.bundle in Resources */,
-				48F94E291F2B3C0800585D3A /* CLDropDownMenuAllCell.xib in Resources */,
 				48F94DF51F2B3B1C00585D3A /* LaunchScreen.storyboard in Resources */,
 				48F94DF21F2B3B1C00585D3A /* Assets.xcassets in Resources */,
 				48F94DF01F2B3B1C00585D3A /* Main.storyboard in Resources */,
 				48F94E311F2B3C7900585D3A /* CameraIcon@2x.png in Resources */,
-				48F94E2B1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

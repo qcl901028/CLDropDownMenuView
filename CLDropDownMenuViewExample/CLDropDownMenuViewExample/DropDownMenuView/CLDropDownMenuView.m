@@ -310,8 +310,17 @@
         _tableView.layer.masksToBounds = YES;
         
 
-        NSBundle *CLDropDownMenuViewBundle = [NSBundle bundleForClass:[self class]];
-        [[CLDropDownMenuViewBundle loadNibNamed:@"CLDropDownMenuAllCell" owner:self options:nil] lastObject];
+        // 这个xib在bundle中加载的解决办法  在终端输入命令：ibtool --errors --warnings --output-format human-readable-text --compile 文件路径.nib 文件路径.xib
+        // 转化成nib进行加载
+        
+        // 如果不直接使用会出现奔溃信息 Terminating app due to uncaught exception
+        // 'NSInternalInconsistencyException', reason: 'Could not load NIB in bundle:
+        // 'NSBundle </var/mobile/Applications/C6718DB8-0C0F-4D38-84E6-55C145279957
+        // /Documents/asset-4.bundle> (not yet loaded)' with name 'file''
+        
+        
+        
+        NSBundle *CLDropDownMenuViewBundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"DropDownMenuView" ofType:@"bundle"]];
         
         [_tableView registerNib:[UINib nibWithNibName:@"CLDropDownMenuAllCell" bundle:CLDropDownMenuViewBundle] forCellReuseIdentifier:@"CLDropDownMenuAllCell"];
         [_tableView registerNib:[UINib nibWithNibName:@"CLDropDownMenuOnlyTitleCell" bundle:CLDropDownMenuViewBundle] forCellReuseIdentifier:@"CLDropDownMenuOnlyTitleCell"];
