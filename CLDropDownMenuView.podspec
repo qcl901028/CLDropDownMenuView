@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CLDropDownMenuView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "高可定制下拉菜单"
   s.homepage     = "https://github.com/qcl901028/CLDropDownMenuView"
   s.license = { :type => 'Apache License, Version 2.0', :text => <<-LICENSE
@@ -18,7 +18,7 @@ LICENSE
   s.platform     = :ios, '8.0'
   s.authors      = { "秦传龙" => "qcl901028@gmail.com"}
   s.source       = { :git => "https://github.com/qcl901028/CLDropDownMenuView.git", :tag => s.version}
-  s.source_files  = 'DropDownMenuView/**/*.{h,m,xib}'
+  s.source_files  = 'DropDownMenuView/**/*.{h,m}'
   s.resource    = 'DropDownMenuView/DropDownMenuView.bundle'
   s.requires_arc = true
 end
