@@ -20,9 +20,6 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) UIView *tempView;
-
-
 @property (nonatomic, strong) UIView *toView;
 
 @end
@@ -63,12 +60,12 @@
         [_delegate dropDownMenuViewWillShow:self];
     }
     
-    self.tempView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+    self.bgImageView.transform = CGAffineTransformMakeScale(0.01, 0.01);
     
     [UIView animateWithDuration:0.2 animations:^{
         
         self.bgMaskView.alpha = 0.15;
-        self.tempView.transform = CGAffineTransformIdentity;
+        self.bgImageView.transform = CGAffineTransformIdentity;
         
     }completion:^(BOOL finished) {
         
@@ -110,7 +107,7 @@
     [UIView animateWithDuration:0.2 animations:^{
         
         self.bgMaskView.alpha = 0.f;
-        self.tempView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        self.bgImageView.transform = CGAffineTransformMakeScale(0.01, 0.01);
 
     }completion:^(BOOL finished) {
         _isShow = NO;
@@ -119,12 +116,12 @@
             
             if (_delegate && [_delegate respondsToSelector:@selector(dropDownMenuViewDidDismiss:)]) {
                 [_delegate dropDownMenuViewDidDismiss:self];
+                [self removeAllSubViews];
             }
             
         }
         
-        [self removeAllSubViews];
-        [self removeFromSuperview];
+        
     }];
     
     
@@ -152,10 +149,10 @@
 
 
 - (void)removeAllSubViews {
-
-    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self removeFromSuperview];
     [self.bgImageView removeFromSuperview];
-    
+    self.bgImageView = nil;
+//    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 - (void)reloadData {
@@ -168,26 +165,16 @@
 }
 
 
-- (UIView *)tempView {
-    
-    if (!_tempView) {
-        _tempView = [[UIView alloc] init];
-        _tempView.translatesAutoresizingMaskIntoConstraints = NO;
-    }
-    return _tempView;
-}
-
-
-
 - (UIImageView *)bgImageView {
 
     if (!_bgImageView) {
         _bgImageView = [[UIImageView alloc] init];
-        _bgImageView.translatesAutoresizingMaskIntoConstraints = NO;
         _bgImageView.userInteractionEnabled = YES;
         _bgImageView.layer.cornerRadius = 3;
         _bgImageView.layer.masksToBounds = YES;
         _bgImageView.contentMode = UIViewContentModeScaleToFill ;
+        
+       
     }
     return _bgImageView;
 }
@@ -196,64 +183,33 @@
 - (void)setup {
     
     [self addSubview:self.bgMaskView];
-    [self addSubview:self.tempView];
-    [self.tempView addSubview:self.bgImageView];
+    [self addSubview:self.bgImageView];
     [self.bgImageView addSubview:self.tableView];
     
     
+
     
       // 设置遮罩层视图的位置
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_bgMaskView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_bgMaskView)]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_bgMaskView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_bgMaskView)]];
     
-    CGFloat bottom = CGRectGetHeight(self.frame)-[self viewHeight]-self.menuConfig.topMarign;
-    if (bottom <=0) {
-        bottom = 0;
-    }
-    
-    CGFloat left = CGRectGetWidth(self.frame)-self.menuConfig.rightMarign-self.menuConfig.viewWidth;
-    
-    if (left <= 0) {
-        left = 0;
-    }
-    
-    
-    NSString *tempView_V = [NSString stringWithFormat:@"V:[_tempView(%f)]-%f-|",[self viewHeight]*2,bottom];
-    NSString *tempView_H = [NSString stringWithFormat:@"H:|-%f-[_tempView(%f)]",left,self.menuConfig.viewWidth*2];
-    
-    
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:tempView_V options:0 metrics:nil views:NSDictionaryOfVariableBindings(_tempView)]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:tempView_H options:0 metrics:nil views:NSDictionaryOfVariableBindings(_tempView)]];
-    
     
     // 设置下拉菜单背景图片的位置
-    [self setBgImageViewFrameWithwidth:self.menuConfig.viewWidth height:[self viewHeight]];
+
     
+    self.bgImageView.frame = CGRectMake(0, 0, self.menuConfig.viewWidth, [self viewHeight]);
+    self.bgImageView.layer.anchorPoint = CGPointMake(1, 0);
+    self.bgImageView.layer.position = CGPointMake(self.frame.size.width-self.menuConfig.rightMarign, self.menuConfig.topMarign);
     
     // 设置tableView的位置
     
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_tableView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_tableView)]];
-    
-    
+
+
     NSString *tableView_V = [NSString stringWithFormat:@"V:|-%f-[_tableView]|",self.menuConfig.pointedHeight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:tableView_V options:0 metrics:nil views:NSDictionaryOfVariableBindings(_tableView)]];
     
-}
-
-
-
-- (void)setBgImageViewFrameWithwidth:(CGFloat)width height:(CGFloat)height {
-    
-    
-    [self.tempView addConstraint:[NSLayoutConstraint constraintWithItem:self.bgImageView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.tempView attribute:NSLayoutAttributeLeft multiplier:1 constant:0]];
-    
-    
-    [self.tempView addConstraint:[NSLayoutConstraint constraintWithItem:self.bgImageView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:height]];
-    
-    [self.tempView addConstraint:[NSLayoutConstraint constraintWithItem:self.bgImageView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.tempView attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
-    
-    
-    [self.tempView addConstraint:[NSLayoutConstraint constraintWithItem:self.bgImageView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1 constant:width]];
+    self.bgImageView.image = self.bgImage;
     
 }
 
@@ -350,7 +306,7 @@
     UIEdgeInsets insets = UIEdgeInsetsMake(top, left, bottom, right);
     // 指定为拉伸模式，伸缩后重新赋值
     bgImage = [bgImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
-    self.bgImageView.image = bgImage;
+    
     
     
 }

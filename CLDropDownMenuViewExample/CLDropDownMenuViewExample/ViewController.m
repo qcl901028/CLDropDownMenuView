@@ -25,6 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.view.backgroundColor = [UIColor blueColor];
     /********模拟数据*********/
     self.itemsList = [NSMutableArray new];
     for (int i = 0; i < 5; i++) {
