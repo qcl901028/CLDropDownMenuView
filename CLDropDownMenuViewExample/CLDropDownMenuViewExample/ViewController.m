@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "CLDropDownMenuView.h"
+#import "CLTestTableViewCell.h"
+
 
 
 @interface ViewController ()<CLDropDownMenuDelegate>
@@ -28,7 +30,7 @@
     self.view.backgroundColor = [UIColor blueColor];
     /********模拟数据*********/
     self.itemsList = [NSMutableArray new];
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 4; i++) {
         
         CLDropDownMenuInfo *info1 = [[CLDropDownMenuInfo alloc] init];
         info1.title = @"我是不能用的";
@@ -48,6 +50,7 @@
         _dropDownMenuView.delegate = self;
         _dropDownMenuView.menuConfig = self.menuConfig;
         _dropDownMenuView.itemList = self.itemsList;
+//        [_dropDownMenuView registerNib:[UINib nibWithNibName:@"CLTestTableViewCell" bundle:nil] forCellReuseIdentifier:@"CLTestTableViewCell"];
         [_dropDownMenuView addDropDownMenuToView:[UIApplication sharedApplication].keyWindow];
     }
     return _dropDownMenuView;
@@ -59,12 +62,15 @@
     if (!_menuConfig) {
         
         _menuConfig = [[CLDropDownMenuConfig alloc] init];
-        _menuConfig.rightMarign = 10;
-        _menuConfig.dropDownType = CLDropDownTypeAll;
-        _menuConfig.viewWidth = 150;
-        _menuConfig.itemHeight = 44;
-        _menuConfig.limitMaxCount = 3;
-        _menuConfig.disableItemSelected = YES;
+//        _menuConfig.rightMarign = 10;
+//        _menuConfig.dropDownType = CLDropDownTypeAll;
+//        _menuConfig.viewWidth = 150;
+//        _menuConfig.itemHeight = 44;
+//        _menuConfig.limitMaxCount = 5;
+//        _menuConfig.pointedHeight = 15;
+////        _menuConfig.cornerRadius = 15;
+//        _menuConfig.backgroundColor = [UIColor redColor];
+//        _menuConfig.disableItemSelected = YES;
     }
     return _menuConfig;
 }
@@ -120,6 +126,19 @@
 }
 
 
+
+// 自定义cell样式
+//- (UITableViewCell *)dropDownMenuView:(CLDropDownMenuView *)dropDownMenuView cellForIndex:(NSInteger)index {
+//
+//    CLTestTableViewCell *cell = [dropDownMenuView dequeueReusableCellWithIdentifier:@"CLTestTableViewCell"];
+//
+//    CLDropDownMenuInfo *info = self.itemsList[index];
+//
+//    cell.label.text = info.title;
+//
+//    return cell;
+//
+//}
 
 
 - (void)didReceiveMemoryWarning {

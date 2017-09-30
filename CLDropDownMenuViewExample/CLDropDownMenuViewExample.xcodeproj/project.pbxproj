@@ -7,22 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48C5ADFD1F7F41670099FEFF /* CLTestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5ADFB1F7F41660099FEFF /* CLTestTableViewCell.m */; };
+		48C5ADFE1F7F41670099FEFF /* CLTestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48C5ADFC1F7F41660099FEFF /* CLTestTableViewCell.xib */; };
+		48C5AE3D1F7F76D90099FEFF /* CLDropDownMenuAllCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5AE2E1F7F75930099FEFF /* CLDropDownMenuAllCell.m */; };
+		48C5AE3E1F7F76D90099FEFF /* CLDropDownMenuOnlyTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5AE301F7F75930099FEFF /* CLDropDownMenuOnlyTitleCell.m */; };
+		48C5AE3F1F7F76D90099FEFF /* CLDropDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5AE321F7F75930099FEFF /* CLDropDownMenuView.m */; };
+		48C5AE401F7F76D90099FEFF /* CLDropDownBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5AE351F7F75930099FEFF /* CLDropDownBgView.m */; };
+		48C5AE411F7F76D90099FEFF /* CLDropDownMenuConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5AE371F7F75930099FEFF /* CLDropDownMenuConfig.m */; };
+		48C5AE421F7F76D90099FEFF /* CLDropDownMenuInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5AE3A1F7F75930099FEFF /* CLDropDownMenuInfo.m */; };
+		48C5AE431F7F76F30099FEFF /* DropDownMenuView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48C5AE3C1F7F75930099FEFF /* DropDownMenuView.bundle */; };
 		48F94DE71F2B3B1B00585D3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94DE61F2B3B1B00585D3A /* main.m */; };
 		48F94DEA1F2B3B1B00585D3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94DE91F2B3B1B00585D3A /* AppDelegate.m */; };
 		48F94DED1F2B3B1C00585D3A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94DEC1F2B3B1C00585D3A /* ViewController.m */; };
 		48F94DF01F2B3B1C00585D3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F94DEE1F2B3B1C00585D3A /* Main.storyboard */; };
 		48F94DF21F2B3B1C00585D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F94DF11F2B3B1C00585D3A /* Assets.xcassets */; };
 		48F94DF51F2B3B1C00585D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F94DF31F2B3B1C00585D3A /* LaunchScreen.storyboard */; };
-		48F94E281F2B3C0800585D3A /* CLDropDownMenuAllCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E191F2B3C0800585D3A /* CLDropDownMenuAllCell.m */; };
-		48F94E2A1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E1C1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.m */; };
-		48F94E2C1F2B3C0800585D3A /* CLDropDownMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E1F1F2B3C0800585D3A /* CLDropDownMenuView.m */; };
-		48F94E2D1F2B3C0800585D3A /* CLDropDownMenuConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E221F2B3C0800585D3A /* CLDropDownMenuConfig.m */; };
-		48F94E2E1F2B3C0800585D3A /* CLDropDownMenuInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 48F94E251F2B3C0800585D3A /* CLDropDownMenuInfo.m */; };
-		48F94E2F1F2B3C0800585D3A /* DropDownMenuView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 48F94E271F2B3C0800585D3A /* DropDownMenuView.bundle */; };
 		48F94E311F2B3C7900585D3A /* CameraIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F94E301F2B3C7900585D3A /* CameraIcon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48C5ADFA1F7F41660099FEFF /* CLTestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLTestTableViewCell.h; sourceTree = "<group>"; };
+		48C5ADFB1F7F41660099FEFF /* CLTestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLTestTableViewCell.m; sourceTree = "<group>"; };
+		48C5ADFC1F7F41660099FEFF /* CLTestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CLTestTableViewCell.xib; sourceTree = "<group>"; };
+		48C5AE2D1F7F75930099FEFF /* CLDropDownMenuAllCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuAllCell.h; sourceTree = "<group>"; };
+		48C5AE2E1F7F75930099FEFF /* CLDropDownMenuAllCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuAllCell.m; sourceTree = "<group>"; };
+		48C5AE2F1F7F75930099FEFF /* CLDropDownMenuOnlyTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuOnlyTitleCell.h; sourceTree = "<group>"; };
+		48C5AE301F7F75930099FEFF /* CLDropDownMenuOnlyTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuOnlyTitleCell.m; sourceTree = "<group>"; };
+		48C5AE311F7F75930099FEFF /* CLDropDownMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuView.h; sourceTree = "<group>"; };
+		48C5AE321F7F75930099FEFF /* CLDropDownMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuView.m; sourceTree = "<group>"; };
+		48C5AE341F7F75930099FEFF /* CLDropDownBgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDropDownBgView.h; sourceTree = "<group>"; };
+		48C5AE351F7F75930099FEFF /* CLDropDownBgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDropDownBgView.m; sourceTree = "<group>"; };
+		48C5AE361F7F75930099FEFF /* CLDropDownMenuConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuConfig.h; sourceTree = "<group>"; };
+		48C5AE371F7F75930099FEFF /* CLDropDownMenuConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuConfig.m; sourceTree = "<group>"; };
+		48C5AE381F7F75930099FEFF /* CLDropDownMenuDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuDelegate.h; sourceTree = "<group>"; };
+		48C5AE391F7F75930099FEFF /* CLDropDownMenuInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuInfo.h; sourceTree = "<group>"; };
+		48C5AE3A1F7F75930099FEFF /* CLDropDownMenuInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuInfo.m; sourceTree = "<group>"; };
+		48C5AE3B1F7F75930099FEFF /* CLDropDownMenuValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuValue.h; sourceTree = "<group>"; };
+		48C5AE3C1F7F75930099FEFF /* DropDownMenuView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DropDownMenuView.bundle; sourceTree = "<group>"; };
 		48F94DE21F2B3B1B00585D3A /* CLDropDownMenuViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CLDropDownMenuViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F94DE61F2B3B1B00585D3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		48F94DE81F2B3B1B00585D3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,19 +54,6 @@
 		48F94DF11F2B3B1C00585D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F94DF41F2B3B1C00585D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48F94DF61F2B3B1C00585D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48F94E181F2B3C0800585D3A /* CLDropDownMenuAllCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuAllCell.h; sourceTree = "<group>"; };
-		48F94E191F2B3C0800585D3A /* CLDropDownMenuAllCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuAllCell.m; sourceTree = "<group>"; };
-		48F94E1B1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuOnlyTitleCell.h; sourceTree = "<group>"; };
-		48F94E1C1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuOnlyTitleCell.m; sourceTree = "<group>"; };
-		48F94E1E1F2B3C0800585D3A /* CLDropDownMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuView.h; sourceTree = "<group>"; };
-		48F94E1F1F2B3C0800585D3A /* CLDropDownMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuView.m; sourceTree = "<group>"; };
-		48F94E211F2B3C0800585D3A /* CLDropDownMenuConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuConfig.h; sourceTree = "<group>"; };
-		48F94E221F2B3C0800585D3A /* CLDropDownMenuConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuConfig.m; sourceTree = "<group>"; };
-		48F94E231F2B3C0800585D3A /* CLDropDownMenuDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuDelegate.h; sourceTree = "<group>"; };
-		48F94E241F2B3C0800585D3A /* CLDropDownMenuInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuInfo.h; sourceTree = "<group>"; };
-		48F94E251F2B3C0800585D3A /* CLDropDownMenuInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLDropDownMenuInfo.m; sourceTree = "<group>"; };
-		48F94E261F2B3C0800585D3A /* CLDropDownMenuValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDropDownMenuValue.h; sourceTree = "<group>"; };
-		48F94E271F2B3C0800585D3A /* DropDownMenuView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DropDownMenuView.bundle; sourceTree = "<group>"; };
 		48F94E301F2B3C7900585D3A /* CameraIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CameraIcon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +68,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48C5AE2B1F7F75930099FEFF /* DropDownMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				48C5AE2C1F7F75930099FEFF /* cell */,
+				48C5AE311F7F75930099FEFF /* CLDropDownMenuView.h */,
+				48C5AE321F7F75930099FEFF /* CLDropDownMenuView.m */,
+				48C5AE331F7F75930099FEFF /* common */,
+				48C5AE3C1F7F75930099FEFF /* DropDownMenuView.bundle */,
+			);
+			name = DropDownMenuView;
+			path = ../../DropDownMenuView;
+			sourceTree = "<group>";
+		};
+		48C5AE2C1F7F75930099FEFF /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				48C5AE2D1F7F75930099FEFF /* CLDropDownMenuAllCell.h */,
+				48C5AE2E1F7F75930099FEFF /* CLDropDownMenuAllCell.m */,
+				48C5AE2F1F7F75930099FEFF /* CLDropDownMenuOnlyTitleCell.h */,
+				48C5AE301F7F75930099FEFF /* CLDropDownMenuOnlyTitleCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		48C5AE331F7F75930099FEFF /* common */ = {
+			isa = PBXGroup;
+			children = (
+				48C5AE341F7F75930099FEFF /* CLDropDownBgView.h */,
+				48C5AE351F7F75930099FEFF /* CLDropDownBgView.m */,
+				48C5AE361F7F75930099FEFF /* CLDropDownMenuConfig.h */,
+				48C5AE371F7F75930099FEFF /* CLDropDownMenuConfig.m */,
+				48C5AE381F7F75930099FEFF /* CLDropDownMenuDelegate.h */,
+				48C5AE391F7F75930099FEFF /* CLDropDownMenuInfo.h */,
+				48C5AE3A1F7F75930099FEFF /* CLDropDownMenuInfo.m */,
+				48C5AE3B1F7F75930099FEFF /* CLDropDownMenuValue.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		48F94DD91F2B3B1B00585D3A = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +126,14 @@
 		48F94DE41F2B3B1B00585D3A /* CLDropDownMenuViewExample */ = {
 			isa = PBXGroup;
 			children = (
-				48F94E161F2B3C0800585D3A /* DropDownMenuView */,
+				48C5AE2B1F7F75930099FEFF /* DropDownMenuView */,
 				48F94DE81F2B3B1B00585D3A /* AppDelegate.h */,
 				48F94DE91F2B3B1B00585D3A /* AppDelegate.m */,
 				48F94DEB1F2B3B1C00585D3A /* ViewController.h */,
 				48F94DEC1F2B3B1C00585D3A /* ViewController.m */,
+				48C5ADFA1F7F41660099FEFF /* CLTestTableViewCell.h */,
+				48C5ADFB1F7F41660099FEFF /* CLTestTableViewCell.m */,
+				48C5ADFC1F7F41660099FEFF /* CLTestTableViewCell.xib */,
 				48F94DEE1F2B3B1C00585D3A /* Main.storyboard */,
 				48F94DF11F2B3B1C00585D3A /* Assets.xcassets */,
 				48F94E301F2B3C7900585D3A /* CameraIcon@2x.png */,
@@ -100,42 +150,6 @@
 				48F94DE61F2B3B1B00585D3A /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		48F94E161F2B3C0800585D3A /* DropDownMenuView */ = {
-			isa = PBXGroup;
-			children = (
-				48F94E171F2B3C0800585D3A /* cell */,
-				48F94E1E1F2B3C0800585D3A /* CLDropDownMenuView.h */,
-				48F94E1F1F2B3C0800585D3A /* CLDropDownMenuView.m */,
-				48F94E201F2B3C0800585D3A /* common */,
-				48F94E271F2B3C0800585D3A /* DropDownMenuView.bundle */,
-			);
-			path = DropDownMenuView;
-			sourceTree = "<group>";
-		};
-		48F94E171F2B3C0800585D3A /* cell */ = {
-			isa = PBXGroup;
-			children = (
-				48F94E181F2B3C0800585D3A /* CLDropDownMenuAllCell.h */,
-				48F94E191F2B3C0800585D3A /* CLDropDownMenuAllCell.m */,
-				48F94E1B1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.h */,
-				48F94E1C1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.m */,
-			);
-			path = cell;
-			sourceTree = "<group>";
-		};
-		48F94E201F2B3C0800585D3A /* common */ = {
-			isa = PBXGroup;
-			children = (
-				48F94E211F2B3C0800585D3A /* CLDropDownMenuConfig.h */,
-				48F94E221F2B3C0800585D3A /* CLDropDownMenuConfig.m */,
-				48F94E231F2B3C0800585D3A /* CLDropDownMenuDelegate.h */,
-				48F94E241F2B3C0800585D3A /* CLDropDownMenuInfo.h */,
-				48F94E251F2B3C0800585D3A /* CLDropDownMenuInfo.m */,
-				48F94E261F2B3C0800585D3A /* CLDropDownMenuValue.h */,
-			);
-			path = common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +211,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F94E2F1F2B3C0800585D3A /* DropDownMenuView.bundle in Resources */,
+				48C5AE431F7F76F30099FEFF /* DropDownMenuView.bundle in Resources */,
 				48F94DF51F2B3B1C00585D3A /* LaunchScreen.storyboard in Resources */,
+				48C5ADFE1F7F41670099FEFF /* CLTestTableViewCell.xib in Resources */,
 				48F94DF21F2B3B1C00585D3A /* Assets.xcassets in Resources */,
 				48F94DF01F2B3B1C00585D3A /* Main.storyboard in Resources */,
 				48F94E311F2B3C7900585D3A /* CameraIcon@2x.png in Resources */,
@@ -212,12 +227,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F94E2A1F2B3C0800585D3A /* CLDropDownMenuOnlyTitleCell.m in Sources */,
-				48F94E281F2B3C0800585D3A /* CLDropDownMenuAllCell.m in Sources */,
-				48F94E2D1F2B3C0800585D3A /* CLDropDownMenuConfig.m in Sources */,
+				48C5AE3D1F7F76D90099FEFF /* CLDropDownMenuAllCell.m in Sources */,
+				48C5AE3E1F7F76D90099FEFF /* CLDropDownMenuOnlyTitleCell.m in Sources */,
+				48C5AE3F1F7F76D90099FEFF /* CLDropDownMenuView.m in Sources */,
+				48C5AE401F7F76D90099FEFF /* CLDropDownBgView.m in Sources */,
+				48C5AE411F7F76D90099FEFF /* CLDropDownMenuConfig.m in Sources */,
+				48C5AE421F7F76D90099FEFF /* CLDropDownMenuInfo.m in Sources */,
 				48F94DED1F2B3B1C00585D3A /* ViewController.m in Sources */,
-				48F94E2E1F2B3C0800585D3A /* CLDropDownMenuInfo.m in Sources */,
-				48F94E2C1F2B3C0800585D3A /* CLDropDownMenuView.m in Sources */,
+				48C5ADFD1F7F41670099FEFF /* CLTestTableViewCell.m in Sources */,
 				48F94DEA1F2B3B1B00585D3A /* AppDelegate.m in Sources */,
 				48F94DE71F2B3B1B00585D3A /* main.m in Sources */,
 			);

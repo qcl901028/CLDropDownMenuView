@@ -10,13 +10,13 @@
 #import "CLDropDownMenuConfig.h"
 #import "CLDropDownMenuAllCell.h"
 #import "CLDropDownMenuOnlyTitleCell.h"
-
+#import "CLDropDownBgView.h"
 
 @interface CLDropDownMenuView ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UIView *bgMaskView;
 
-@property (nonatomic, strong) UIImageView *bgImageView;
+@property (nonatomic, strong) CLDropDownBgView *bgView;
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -33,6 +33,24 @@
     return dropDownView;
     
 }
+
+- (void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier {
+    
+    [self.tableView registerNib:nib forCellReuseIdentifier:identifier];
+    
+}
+
+
+- (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString *)identifier {
+    [self.tableView registerClass:cellClass forCellReuseIdentifier:identifier];
+}
+
+- (__kindof UITableViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier {
+    
+  return [self.tableView dequeueReusableCellWithIdentifier:identifier];
+    
+}
+
 
 
 - (instancetype)init
@@ -60,12 +78,12 @@
         [_delegate dropDownMenuViewWillShow:self];
     }
     
-    self.bgImageView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+    self.bgView.transform = CGAffineTransformMakeScale(0.01, 0.01);
     
     [UIView animateWithDuration:0.2 animations:^{
         
         self.bgMaskView.alpha = 0.15;
-        self.bgImageView.transform = CGAffineTransformIdentity;
+        self.bgView.transform = CGAffineTransformIdentity;
         
     }completion:^(BOOL finished) {
         
@@ -107,7 +125,7 @@
     [UIView animateWithDuration:0.2 animations:^{
         
         self.bgMaskView.alpha = 0.f;
-        self.bgImageView.transform = CGAffineTransformMakeScale(0.01, 0.01);
+        self.bgView.transform = CGAffineTransformMakeScale(0.01, 0.01);
 
     }completion:^(BOOL finished) {
         _isShow = NO;
@@ -150,8 +168,8 @@
 
 - (void)removeAllSubViews {
     [self removeFromSuperview];
-    [self.bgImageView removeFromSuperview];
-    self.bgImageView = nil;
+    [self.bgView removeFromSuperview];
+    self.bgView = nil;
 //    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
@@ -165,28 +183,25 @@
 }
 
 
-- (UIImageView *)bgImageView {
+- (CLDropDownBgView *)bgView {
 
-    if (!_bgImageView) {
-        _bgImageView = [[UIImageView alloc] init];
-        _bgImageView.userInteractionEnabled = YES;
-        _bgImageView.layer.cornerRadius = 3;
-        _bgImageView.layer.masksToBounds = YES;
-        _bgImageView.contentMode = UIViewContentModeScaleToFill ;
-        
-       
+    if (!_bgView) {
+        _bgView = [[CLDropDownBgView alloc] init];
+        _bgView.menuConfig = self.menuConfig;
     }
-    return _bgImageView;
+    return _bgView;
 }
 
 
 - (void)setup {
     
     [self addSubview:self.bgMaskView];
-    [self addSubview:self.bgImageView];
-    [self.bgImageView addSubview:self.tableView];
+    [self addSubview:self.bgView];
+    [self.bgView addSubview:self.tableView];
     
-    
+    self.tableView.bounces = self.menuConfig.bounces;
+    self.tableView.layer.cornerRadius = self.menuConfig.cornerRadius;
+    self.tableView.layer.masksToBounds = YES;
 
     
       // 设置遮罩层视图的位置
@@ -195,11 +210,9 @@
     
     
     // 设置下拉菜单背景图片的位置
-
-    
-    self.bgImageView.frame = CGRectMake(0, 0, self.menuConfig.viewWidth, [self viewHeight]);
-    self.bgImageView.layer.anchorPoint = CGPointMake(1, 0);
-    self.bgImageView.layer.position = CGPointMake(self.frame.size.width-self.menuConfig.rightMarign, self.menuConfig.topMarign);
+    self.bgView.frame = CGRectMake(0, 0, self.menuConfig.viewWidth, [self viewHeight]);
+    self.bgView.layer.anchorPoint = CGPointMake(1, 0);
+    self.bgView.layer.position = CGPointMake(self.frame.size.width-self.menuConfig.rightMarign, self.menuConfig.topMarign);
     
     // 设置tableView的位置
     
@@ -209,7 +222,6 @@
     NSString *tableView_V = [NSString stringWithFormat:@"V:|-%f-[_tableView]|",self.menuConfig.pointedHeight];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:tableView_V options:0 metrics:nil views:NSDictionaryOfVariableBindings(_tableView)]];
     
-    self.bgImageView.image = self.bgImage;
     
 }
 
@@ -257,13 +269,11 @@
         _tableView = tableView;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.bounces = self.menuConfig.bounces;
         _tableView.tableFooterView = [UIView new];
         _tableView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.estimatedRowHeight = 44;
-        _tableView.layer.cornerRadius = 3;
-        _tableView.layer.masksToBounds = YES;
+
         
 
         // 这个xib在bundle中加载的解决办法  在终端输入命令：ibtool --errors --warnings --output-format human-readable-text --compile 文件路径.nib 文件路径.xib
@@ -296,20 +306,20 @@
 }
 
 
-- (void)setBgImage:(UIImage *)bgImage {
-    _bgImage = bgImage;
-    
-    CGFloat top = 30;             // 顶端盖高度
-    CGFloat bottom = 10 ;         // 底端盖高度
-    CGFloat left = 10;             // 左端盖宽度
-    CGFloat right = 10;           // 右端盖宽度
-    UIEdgeInsets insets = UIEdgeInsetsMake(top, left, bottom, right);
-    // 指定为拉伸模式，伸缩后重新赋值
-    bgImage = [bgImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
-    
-    
-    
-}
+//- (void)setBgImage:(UIImage *)bgImage {
+//    _bgImage = bgImage;
+//
+//    CGFloat top = 30;             // 顶端盖高度
+//    CGFloat bottom = 10 ;         // 底端盖高度
+//    CGFloat left = 10;             // 左端盖宽度
+//    CGFloat right = 10;           // 右端盖宽度
+//    UIEdgeInsets insets = UIEdgeInsetsMake(top, left, bottom, right);
+//    // 指定为拉伸模式，伸缩后重新赋值
+//    bgImage = [bgImage resizableImageWithCapInsets:insets resizingMode:UIImageResizingModeStretch];
+//
+//
+//
+//}
 
 
 
@@ -369,13 +379,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
+    if (self.menuConfig.dropDownType == CLDropDownTypeCustom) {
+        // 这个是自定义cell
+        if (self.delegate && [self.delegate respondsToSelector:@selector(dropDownMenuView:cellForIndex:)]) {
+            UITableViewCell *cell = [self.delegate dropDownMenuView:self cellForIndex:indexPath.row];
+            return cell;
+        }
+    }
+    
     if (self.menuConfig.dropDownType == CLDropDownTypeAll) {
         CLDropDownMenuAllCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CLDropDownMenuAllCell"];
         
         CLDropDownMenuInfo *info = self.itemList[indexPath.row];
         cell.menuConfig = self.menuConfig;
         cell.menuInfo = info;
-        
+        cell.backgroundColor = self.menuConfig.backgroundColor;
         return cell;
     }
     
@@ -386,7 +405,7 @@
         CLDropDownMenuInfo *info = self.itemList[indexPath.row];
         cell.menuConfig = self.menuConfig;
         cell.menuInfo = info;
-        
+        cell.backgroundColor = self.menuConfig.backgroundColor;
         return cell;
         
     }

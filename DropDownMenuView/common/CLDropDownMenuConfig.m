@@ -28,7 +28,8 @@
         self.disableTextColor = [UIColor colorWithWhite:0.88 alpha:1];
         self.pointedHeight = 9.0f;
         self.disableItemSelected = NO;
-        
+        self.backgroundColor = [UIColor whiteColor];
+        self.cornerRadius = 5.0f;
     }
     return self;
 }
@@ -76,7 +77,7 @@
 - (void)setPointedHeight:(CGFloat)pointedHeight {
     
     if (pointedHeight < 0) {
-        _pointedHeight = 5.0f;
+        _pointedHeight = 9.0f;
     } else {
         
         _pointedHeight = pointedHeight;

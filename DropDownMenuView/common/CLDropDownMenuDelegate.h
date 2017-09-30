@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class CLDropDownMenuView;
+@class CLDropDownMenuView,UITableViewCell;
 @protocol CLDropDownMenuDelegate <NSObject>
 
 
@@ -31,5 +31,8 @@
 /* 视图已经消失 */
 - (void)dropDownMenuViewDidDismiss:(CLDropDownMenuView *)dropDownMenuView;
 
+
+// 1.1.2  增加自定义item 
+- (UITableViewCell *)dropDownMenuView:(CLDropDownMenuView *)dropDownMenuView cellForIndex:(NSInteger)index;
 
 @end

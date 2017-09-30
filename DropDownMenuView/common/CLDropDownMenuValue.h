@@ -13,5 +13,6 @@ typedef NS_ENUM(NSInteger, CLDropDownType) {
     
     CLDropDownTypeAll = 0,  // 有文字和图片
     CLDropDownTypeOnlyTitle, // 只有文字
+    CLDropDownTypeCustom    // 自定义item样式
     
 };

@@ -21,7 +21,7 @@
 /*
  
 图层分解:
-    self(CLDropDownMenuView) --> 遮罩层UIView(黑色背景：bgMaskView) --> 因为缩放位置是中心所以添加了tempView临时视图大小是子视图bgImageView的四倍 --> UIImageView(下拉菜单的背景图：bgImageView 在父视图的第二象限) --> UItableView(表格视图：tableView) -->UITableViewCell(点击的单元格)
+    self(CLDropDownMenuView) --> 遮罩层UIView(黑色背景：bgMaskView) --> UIImageView(下拉菜单的背景图：bgImageView) --> UItableView(表格视图：tableView) -->UITableViewCell(点击的单元格)
  
 项目类分析:
     CLDropDownMenuView：下拉菜单视图类
@@ -37,30 +37,28 @@
 
 @property (nonatomic, strong) UIImage *bgImage; // 背景图片
 
-
 @property (nonatomic, weak) id<CLDropDownMenuDelegate> delegate;// delegate
-
-
 
 @property (nonatomic, strong) NSArray<CLDropDownMenuInfo *> *itemList; //设置菜单数据
 
-
-
 @property (nonatomic, strong) CLDropDownMenuConfig *menuConfig;  // 配置用户信息
-
 
 @property (nonatomic, assign, readonly) BOOL isShow;  // 是否显示
 
 
-+ (instancetype)dropDownMenuView;
++ (instancetype)dropDownMenuView; // 视图初始化
 
 
 - (void)addDropDownMenuToView:(UIView *)view;  // 添加视图到某个视图上
 
 - (void)dismissDropDownMenuView; //关闭下拉菜单  一般情况不用调用
 
-
 - (void)reloadData; // 刷新数据
 
+
+// 这个是用来自定义Item单元格的   可以根据自己的爱好 自己定义
+- (void)registerNib:(UINib *)nib forCellReuseIdentifier:(NSString *)identifier;
+- (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString *)identifier;
+- (__kindof UITableViewCell *)dequeueReusableCellWithIdentifier:(NSString *)identifier;
 
 @end

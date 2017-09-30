@@ -43,6 +43,9 @@
 @property (nonatomic, strong) UIColor *textColor; // 文字颜色 默认0.25白色字体
 
 
+@property (nonatomic, strong) UIColor *backgroundColor;   // 背景颜色 默认是白色
+
+
 @property (nonatomic, strong) UIFont *disableTextFont;  // 不可用的文字大小  默认14号系统字体
 
 
@@ -53,6 +56,8 @@
 
 
 @property (nonatomic, assign) BOOL disableItemSelected;  // 不可用的状态是否可以被点击  默认是不可以
+
+@property (nonatomic, assign) CGFloat cornerRadius;   // 圆角半径  默认是5.f;
 
 
 @end
