@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CLDropDownMenuView"
-  s.version      = "1.0.2"
+  s.version      = "1.1.0"
   s.summary      = "高可定制下拉菜单"
   s.homepage     = "https://github.com/qcl901028/CLDropDownMenuView"
   s.license = { :type => 'Apache License, Version 2.0', :text => <<-LICENSE
