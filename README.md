@@ -1,5 +1,6 @@
 #CLDropDownMenuView
 一个高度可定制的下拉菜单，效果如下：
+![下拉菜单效果图.png](./下拉菜单效果图.gif)
 
 ## Getting Started 【开始使用】
 
@@ -34,7 +35,7 @@ pod 'CLDropDownMenuView'
 github地址：[CLDropDownMenuView](https://github.com/qcl901028/CLDropDownMenuView)
 项目结构如下：
 
-![项目结构.png](/Users/qinchuanlong/Desktop/项目结构.png)
+![项目结构.png](./项目结构.png)
 直接将DropDownMenuView 文件到导入你的项目，导入头文件#import "CLDropDownMenuView.h"即可。
 
 #### Description 【描述】
